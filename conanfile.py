@@ -10,7 +10,7 @@ required_conan_version = ">=1.33.0"
 
 class Metall(ConanFile):
     name = "metall"
-    version = "v0.20"
+    version = "0.20"
     homepage = "https://github.com/LLNL/metall"
     description = "Meta allocator for persistent memory"
     topics = "cpp", "allocator", "memory-allocator", "persistent-memory", "ecp", "exascale-computing"
@@ -18,7 +18,7 @@ class Metall(ConanFile):
     scm = {
         "type": "git",
         "url": "https://github.com/LLNL/metall.git",
-        "revision": version
+        "revision": "v"+version
     }
     settings = "build_type", "compiler", "os", "arch"
     options = {"shared": [True, False],
