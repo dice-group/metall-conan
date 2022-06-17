@@ -8,8 +8,8 @@ from conans.util.files import rmdir
 required_conan_version = ">=1.33.0"
 
 
-class Metall(ConanFile):
-    name = "metall"
+class Recipe(ConanFile):
+    name = "Metall"
     version = "0.20"
     homepage = "https://github.com/LLNL/metall"
     description = "Meta allocator for persistent memory"
@@ -122,3 +122,10 @@ class Metall(ConanFile):
     def package(self):
         self._configure_cmake().install()
         rmdir(os.path.join(self.package_folder, "share"))
+
+    def package_info(self):
+        name = "Metall"
+        self.cpp_info.set_property("cmake_file_name", name)
+        self.cpp_info.names["cmake_find_package"] = name
+        self.cpp_info.names["cmake_find_package_multi"] = name
+        self.cpp_info.set_property("cmake_target_name", f"{name}::{name}")
