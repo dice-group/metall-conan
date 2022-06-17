@@ -9,7 +9,7 @@ required_conan_version = ">=1.33.0"
 
 
 class Recipe(ConanFile):
-    name = "Metall"
+    name = "metall"
     version = "0.20"
     homepage = "https://github.com/LLNL/metall"
     description = "Meta allocator for persistent memory"
